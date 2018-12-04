@@ -1,0 +1,194 @@
+extends layout
+
+block content
+    nav#sectionsNav.navbar.navbar-transparent.navbar-color-on-scroll.fixed-top.navbar-expand-lg(color-on-scroll='100')
+        .container
+            .navbar-translate
+                a.navbar-brand(href='https://demos.creative-tim.com/material-kit/index.html')
+                    | Material Kit
+                button.navbar-toggler(type='button' data-toggle='collapse' aria-expanded='false' aria-label='Toggle navigation')
+                    span.sr-only Toggle navigation
+                    span.navbar-toggler-icon
+                    span.navbar-toggler-icon
+                    span.navbar-toggler-icon
+            .collapse.navbar-collapse
+                ul.navbar-nav.ml-auto
+                    li.dropdown.nav-item
+                        a.dropdown-toggle.nav-link(href='#' data-toggle='dropdown')
+                            i.material-icons apps
+                            |  Components
+                        .dropdown-menu.dropdown-with-icons
+                            a.dropdown-item(href='../index.html')
+                                i.material-icons layers
+                                |  All Components
+                            a.dropdown-item(href='https://demos.creative-tim.com/material-kit/docs/2.1/getting-started/introduction.html')
+                                i.material-icons content_paste
+                                |  Documentation
+                    li.nav-item
+                        a.nav-link(href='javascript:void(0)' onclick='scrollToDownload()')
+                            i.material-icons cloud_download
+                            |  Download
+                    li.nav-item
+                        a.nav-link(rel='tooltip' title='' data-placement='bottom' href='https://twitter.com/CreativeTim' target='_blank' data-original-title='Follow us on Twitter')
+                            i.fa.fa-twitter
+                    li.nav-item
+                        a.nav-link(rel='tooltip' title='' data-placement='bottom' href='https://www.facebook.com/CreativeTim' target='_blank' data-original-title='Like us on Facebook')
+                            i.fa.fa-facebook-square
+                    li.nav-item
+                        a.nav-link(rel='tooltip' title='' data-placement='bottom' href='https://www.instagram.com/CreativeTimOfficial' target='_blank' data-original-title='Follow us on Instagram')
+                            i.fa.fa-instagram
+    .page-header.header-filter(data-parallax='true' style="background-image: url('/img/profile_city.jpg')")
+        .container
+            .row
+                .col-md-6
+                    h1.title Your Story Starts With Us.
+                    h4
+                        | Every landing page needs a small description after the big bold title, that&apos;s why we added this text here. Add here all the information that can make you or your product create the first impression.
+                    br
+                    //- a.btn.btn-danger.btn-raised.btn-lg(href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank')
+                    //-     i.fa.fa-play
+                    //-     |  Watch video
+    .main.main-raised
+        .container
+            .section.text-center
+                //- .row
+                //-     .col-md-8.ml-auto.mr-auto
+                //-         h2.title Let&apos;s talk product
+                //-         h5.description
+                //-             | This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.
+                .features
+                    .row
+                        .col-md-4
+                            .info
+                                .icon.icon-info
+                                    i.material-icons chat
+                                h4.info-title Free Chat
+                                p
+                                    | Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.
+                        .col-md-4
+                            .info
+                                .icon.icon-success
+                                    i.material-icons verified_user
+                                h4.info-title Verified Users
+                                p
+                                    | Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.
+                        .col-md-4
+                            .info
+                                .icon.icon-danger
+                                    i.material-icons fingerprint
+                                h4.info-title Fingerprint
+                                p
+                                    | Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.
+            .section.text-center
+                h2.title Here is our team
+                .team
+                    .row
+                        .col-md-4
+                            .team-player
+                                .card.card-plain
+                                    .col-md-6.ml-auto.mr-auto
+                                        img.img-raised.rounded-circle.img-fluid(src='/img/faces/avatar.jpg' alt='Thumbnail Image')
+                                    h4.card-title
+                                        | Gigi Hadid
+                                        br
+                                        small.card-description.text-muted Model
+                                    .card-body
+                                        p.card-description
+                                            | You can write here details about one of your team members. You can give more details about what they do. Feel free to add some 
+                                            a(href='#') links
+                                            |  for people to be able to follow them outside the site.
+                                    .card-footer.justify-content-center
+                                        a.btn.btn-link.btn-just-icon(href='#pablo')
+                                            i.fa.fa-twitter
+                                        a.btn.btn-link.btn-just-icon(href='#pablo')
+                                            i.fa.fa-instagram
+                                        a.btn.btn-link.btn-just-icon(href='#pablo')
+                                            i.fa.fa-facebook-square
+                        .col-md-4
+                            .team-player
+                                .card.card-plain
+                                    .col-md-6.ml-auto.mr-auto
+                                        img.img-raised.rounded-circle.img-fluid(src='/img/faces/christian.jpg' alt='Thumbnail Image')
+                                    h4.card-title
+                                        | Christian Louboutin
+                                        br
+                                        small.card-description.text-muted Designer
+                                    .card-body
+                                        p.card-description
+                                            | You can write here details about one of your team members. You can give more details about what they do. Feel free to add some 
+                                            a(href='#') links
+                                            |  for people to be able to follow them outside the site.
+                                    .card-footer.justify-content-center
+                                        a.btn.btn-link.btn-just-icon(href='#pablo')
+                                            i.fa.fa-twitter
+                                        a.btn.btn-link.btn-just-icon(href='#pablo')
+                                            i.fa.fa-linkedin
+                        .col-md-4
+                            .team-player
+                                .card.card-plain
+                                    .col-md-6.ml-auto.mr-auto
+                                        img.img-raised.rounded-circle.img-fluid(src='/img/faces/kendall.jpg' alt='Thumbnail Image')
+                                    h4.card-title
+                                        | Kendall Jenner
+                                        br
+                                        small.card-description.text-muted Model
+                                    .card-body
+                                        p.card-description
+                                            | You can write here details about one of your team members. You can give more details about what they do. Feel free to add some 
+                                            a(href='#') links
+                                            |  for people to be able to follow them outside the site.
+                                    .card-footer.justify-content-center
+                                        a.btn.btn-link.btn-just-icon(href='#pablo')
+                                            i.fa.fa-twitter
+                                        a.btn.btn-link.btn-just-icon(href='#pablo')
+                                            i.fa.fa-instagram
+                                        a.btn.btn-link.btn-just-icon(href='#pablo')
+                                            i.fa.fa-facebook-square
+            .section.section-contacts
+                .row
+                    .col-md-8.ml-auto.mr-auto
+                        h2.text-center.title Work with us
+                        h4.text-center.description
+                            | Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.
+                        form.contact-form
+                            .row
+                                .col-md-6
+                                    .form-group
+                                        label.bmd-label-floating Your Name
+                                        input.form-control(type='email')
+                                .col-md-6
+                                    .form-group
+                                        label.bmd-label-floating Your Email
+                                        input.form-control(type='email')
+                            .form-group
+                                label.bmd-label-floating(for='exampleMessage') Your Message
+                                textarea#exampleMessage.form-control(type='email' rows='4')
+                            .row
+                                .col-md-4.ml-auto.mr-auto.text-center
+                                    button.btn.btn-primary.btn-raised
+                                        | Send Message
+    footer.footer.footer-default
+        .container
+            nav.float-left
+                ul
+                    li
+                        a(href='https://www.creative-tim.com')
+                            | Creative Tim
+                    li
+                        a(href='https://creative-tim.com/presentation')
+                            | About Us
+                    li
+                        a(href='http://blog.creative-tim.com')
+                            | Blog
+                    li
+                        a(href='https://www.creative-tim.com/license')
+                            | Licenses
+            .copyright.float-right
+                | &copy;
+                script.
+                    document.write(new Date().getFullYear())
+                | , made with 
+                i.material-icons favorite
+                |  by
+                a(href='https://www.creative-tim.com' target='_blank') Creative Tim
+                |  for a better web.
