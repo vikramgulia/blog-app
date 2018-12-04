@@ -1,11 +1,19 @@
 extends layout
 
+mixin post-card(post)
+    - var headerColor = post.isFeatured ? 'card-header-danger' : ''
+    .col-md-4
+        .card.info
+            .card-header(class=`${headerColor}`)
+                h3.card-title #{post.title}
+                h6.category #{post.category}
+            .card-body #{post.header}
+
 block content
     nav#sectionsNav.navbar.navbar-transparent.navbar-color-on-scroll.fixed-top.navbar-expand-lg(color-on-scroll='100')
         .container
             .navbar-translate
-                a.navbar-brand(href='https://demos.creative-tim.com/material-kit/index.html')
-                    | Material Kit
+                a.navbar-brand(href='/') #{title}
                 button.navbar-toggler(type='button' data-toggle='collapse' aria-expanded='false' aria-label='Toggle navigation')
                     span.sr-only Toggle navigation
                     span.navbar-toggler-icon
@@ -16,18 +24,18 @@ block content
                     li.dropdown.nav-item
                         a.dropdown-toggle.nav-link(href='#' data-toggle='dropdown')
                             i.material-icons apps
-                            |  Components
+                            |  Menu
                         .dropdown-menu.dropdown-with-icons
-                            a.dropdown-item(href='../index.html')
+                            a.dropdown-item(href='/author')
                                 i.material-icons layers
-                                |  All Components
-                            a.dropdown-item(href='https://demos.creative-tim.com/material-kit/docs/2.1/getting-started/introduction.html')
+                                |  Author
+                            a.dropdown-item(href='')
                                 i.material-icons content_paste
-                                |  Documentation
+                                |  About us
                     li.nav-item
-                        a.nav-link(href='javascript:void(0)' onclick='scrollToDownload()')
-                            i.material-icons cloud_download
-                            |  Download
+                        a.nav-link(href='https://github.com/geekyjaat', target="_blank")
+                            i.fa.fa-github
+                            |  Projects
                     li.nav-item
                         a.nav-link(rel='tooltip' title='' data-placement='bottom' href='https://twitter.com/CreativeTim' target='_blank' data-original-title='Follow us on Twitter')
                             i.fa.fa-twitter
@@ -37,11 +45,11 @@ block content
                     li.nav-item
                         a.nav-link(rel='tooltip' title='' data-placement='bottom' href='https://www.instagram.com/CreativeTimOfficial' target='_blank' data-original-title='Follow us on Instagram')
                             i.fa.fa-instagram
-    .page-header.header-filter(data-parallax='true' style="background-image: url('/img/profile_city.jpg')")
+    .page-header.header-filter(data-parallax='true' style="background-image: url('/img/journal.jpeg')")
         .container
             .row
-                .col-md-6
-                    h1.title Your Story Starts With Us.
+                .col-md-12
+                    h1.title Computer, Coding and Coffee
                     h4
                         | Every landing page needs a small description after the big bold title, that&apos;s why we added this text here. Add here all the information that can make you or your product create the first impression.
                     br
@@ -50,7 +58,7 @@ block content
                     //-     |  Watch video
     .main.main-raised
         .container
-            .section.text-center
+            .section
                 //- .row
                 //-     .col-md-8.ml-auto.mr-auto
                 //-         h2.title Let&apos;s talk product
@@ -58,27 +66,9 @@ block content
                 //-             | This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.
                 .features
                     .row
-                        .col-md-4
-                            .info
-                                .icon.icon-info
-                                    i.material-icons chat
-                                h4.info-title Free Chat
-                                p
-                                    | Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.
-                        .col-md-4
-                            .info
-                                .icon.icon-success
-                                    i.material-icons verified_user
-                                h4.info-title Verified Users
-                                p
-                                    | Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.
-                        .col-md-4
-                            .info
-                                .icon.icon-danger
-                                    i.material-icons fingerprint
-                                h4.info-title Fingerprint
-                                p
-                                    | Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.
+                        each post in posts
+                            +post-card(post)
+                        
             .section.text-center
                 h2.title Here is our team
                 .team
