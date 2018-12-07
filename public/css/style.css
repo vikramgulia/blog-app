@@ -575,7 +575,7 @@
 /* Section Components */
 
 .main>.container>.section {
-  padding: inherit !important;
+  padding: 30px 0px;
 }
 
 .section-components .title {

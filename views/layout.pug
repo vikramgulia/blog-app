@@ -10,11 +10,11 @@ head
   link(rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css')
   // CSS Files
-  link(href='/css/material-kit.min.css?v=2.0.5' rel='stylesheet')
+  link(href='/css/material-kit.css?v=2.0.5' rel='stylesheet')
   // CSS Just for demo purpose, don't include it in your project
   link(href='/css/style.css' rel='stylesheet')
 
-body.landing-page.sidebar-collapse
+body(class=`${bodyClass} sidebar-collapse`)
     nav#sectionsNav.navbar.navbar-transparent.navbar-color-on-scroll.fixed-top.navbar-expand-lg(color-on-scroll='100')
         .container
             .navbar-translate
@@ -53,6 +53,28 @@ body.landing-page.sidebar-collapse
                         a.nav-link(rel='tooltip' title='' data-placement='bottom' href='https://www.instagram.com/guliavikram' target='_blank' data-original-title='Follow us on Instagram')
                             i.fa.fa-instagram
     block content
+    footer.footer.footer-default
+        .container
+            nav.float-left
+                ul
+                    li
+                        a(href='/')
+                            | The Technical Journal
+                    li
+                        a(href='/about_us')
+                            | About Us
+                    li
+                        a(href='/privacy')
+                            | Privacy
+                    li
+                        a(href='contact')
+                            | Contact Us
+            .copyright.float-right
+                | &copy;
+                script.
+                    document.write(new Date().getFullYear())
+                | 
+                a(href='/') The Technical Journal
     
 script(src="/js/core/popper.min.js")
 script(src="/jquery.min.js")

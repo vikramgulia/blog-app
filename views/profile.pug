@@ -1,0 +1,68 @@
+extends layout
+
+block content
+    .page-header.header-filter(data-parallax='true' style="background-image: url('/img/journal.jpeg')")
+    .main.main-raised
+        .profile-content
+            .container
+                .row
+                    .col-md-6.ml-auto.mr-auto
+                        .profile
+                            .avatar
+                                img.img-raised.rounded-circle.img-fluid(src=`/img/faces/${author.img}` alt="circled image")
+                            .name
+                                h3.title #{author.name}
+                                h6 #{author.title}
+                                a.btn.btn-just-icon.btn-link.btn-github(href=`https://github.com/${author.github_id}`)
+                                    i.fa.fa-github
+                                a.btn.btn-just-icon.btn-link.btn-twitter(href=`https://twitter.com/${author.twitter_id}`)
+                                    i.fa.fa-twitter
+                                a.btn.btn-just-icon.btn-link.btn-instagram(href=`https://www.instagram.com/${author.instagram_id}`) 
+                                    i.fa.fa-instagram
+
+                .description.text-center
+                    p #{description}
+                .row
+                    .col-md-6.ml-auto.mr-auto
+                        .profile-tabs
+                            ul.nav.nav-pills.nav-pills-icons.justify-content-center(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#studio', role='tab', data-toggle='tab')
+                                    i.material-icons camera
+                                    |  Studio
+                                li.nav-item
+                                    a.nav-link(href='#works', role='tab', data-toggle='tab')
+                                    i.material-icons palette
+                                    |  Work
+                                li.nav-item
+                                    a.nav-link(href='#favorite', role='tab', data-toggle='tab')
+                                    i.material-icons favorite
+                                    |  Favorite
+
+                .tab-content.tab-space
+                    #studio.tab-pane.active.text-center.gallery
+                        .row
+                            .col-md-3.ml-auto
+                                img.rounded(src='/img/examples/studio-1.jpg')
+                                img.rounded(src='/img/examples/studio-2.jpg')
+                            .col-md-3.mr-auto
+                                img.rounded(src='/img/examples/studio-5.jpg')
+                                img.rounded(src='/img/examples/studio-4.jpg')
+                    #works.tab-pane.text-center.gallery
+                        .row
+                            .col-md-3.ml-auto
+                                img.rounded(src='/img/examples/olu-eletu.jpg')
+                                img.rounded(src='/img/examples/clem-onojeghuo.jpg')
+                                img.rounded(src='/img/examples/cynthia-del-rio.jpg')
+                            .col-md-3.mr-auto
+                                img.rounded(src='/img/examples/mariya-georgieva.jpg')
+                                img.rounded(src='/img/examples/clem-onojegaw.jpg')
+                    #favorite.tab-pane.text-center.gallery
+                        .row
+                            .col-md-3.ml-auto
+                                img.rounded(src='/img/examples/mariya-georgieva.jpg')
+                                img.rounded(src='/img/examples/studio-3.jpg')
+                            .col-md-3.mr-auto
+                                img.rounded(src='/img/examples/clem-onojeghuo.jpg')
+                                img.rounded(src='/img/examples/olu-eletu.jpg')
+                                img.rounded(src='/img/examples/studio-1.jpg')
