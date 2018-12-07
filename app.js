@@ -24,9 +24,8 @@ app.get('/', (req, res) => {
 
 app.get('/authors/:author_id', (req, res) => {
     const author_id = req.params.author_id;
-    console.log(req.params);
+    console.log(`pulling profile page for - `, req.params);
     const author = db.getAuthors().find(a => a.id === author_id);
-    console.log(author);
     res.render('profile', {
         author,
         bodyClass: 'profile-page',
